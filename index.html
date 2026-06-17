@@ -565,7 +565,7 @@ footer {
 
     <div class="hero-cta">
       <!-- EDITAR: substitua SEU_LINK_KIWIFY pelo link real -->
-      <a href= https://pay.kiwify.com.br/Ggb62j9 target="_blank" rel="noopener" class="btn-hero">
+      <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-hero">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         Quero os 550 Prompts - R$ 27,90
       </a>
@@ -770,6 +770,171 @@ footer {
     R$ 27,90 - Acesso imediato
   </div>
   <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-buy">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    Comprar
+  </a>
+</div>
+
+<script>
+/* PARTICULAS NO FUNDO */
+(function(){
+  var canvas = document.getElementById('bg-canvas');
+  var ctx = canvas.getContext('2d');
+  var W, H, particles = [];
+
+  function resize(){
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  var CHARS = ['0','1','{','}','<','>','/','#','$','@'];
+  var GREEN = '#00FF88';
+
+  function init(){
+    particles = [];
+    var count = Math.min(60, Math.floor(W * H / 14000));
+    for(var i=0; i<count; i++){
+      particles.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        char: CHARS[Math.floor(Math.random()*CHARS.length)],
+        size: 9 + Math.random()*7,
+        speed: 0.15 + Math.random()*0.3,
+        alpha: 0.08 + Math.random()*0.18,
+        drift: (Math.random()-0.5)*0.3
+      });
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0; i<particles.length; i++){
+      var p = particles[i];
+      ctx.font = p.size + "px 'Space Mono', monospace";
+      ctx.fillStyle = GREEN;
+      ctx.globalAlpha = p.alpha;
+      ctx.fillText(p.char, p.x, p.y);
+      p.y -= p.speed;
+      p.x += p.drift;
+      if(p.y < -20){ p.y = H+20; p.x = Math.random()*W; p.char = CHARS[Math.floor(Math.random()*CHARS.length)]; }
+      if(p.x < -20 || p.x > W+20){ p.x = Math.random()*W; }
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  init();
+  draw();
+  window.addEventListener('resize', function(){ resize(); init(); });
+})();
+
+/* CONTADOR ANIMADO */
+(function(){
+  var el = document.getElementById('counter');
+  var target = 550;
+  var start = null;
+  var duration = 1800;
+
+  function ease(t){ return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+  function step(ts){
+    if(!start) start = ts;
+    var prog = Math.min((ts-start)/duration, 1);
+    el.textContent = Math.round(ease(prog)*target);
+    if(prog < 1){ requestAnimationFrame(step); }
+    else { el.textContent = target; }
+  }
+  setTimeout(function(){ requestAnimationFrame(step); }, 300);
+})();
+
+/* FADE IN AO ROLAR */
+(function(){
+  var els = document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('visible'); });
+  }
+})();
+</script>
+</body>
+</html>
+  </section>
+
+  <!-- PLANO -->
+  <section class="plan-section fade-in">
+    <div class="section-label">Plano de acao</div>
+    <h2 class="section-title">Do zero ao resultado <span>em 30 dias</span></h2>
+
+    <div class="plan-steps">
+      <div class="plan-step">
+        <div class="step-dot">S1</div>
+        <div class="step-content">
+          <div class="step-week">Semana 1 - Dias 1 a 7</div>
+          <div class="step-title">Fundacao</div>
+          <div class="step-desc">Defina seu nicho, crie sua persona com IA e estruture seu primeiro produto ou servico digital.</div>
+        </div>
+      </div>
+      <div class="plan-step">
+        <div class="step-dot">S2</div>
+        <div class="step-content">
+          <div class="step-week">Semana 2 - Dias 8 a 14</div>
+          <div class="step-title">Criacao</div>
+          <div class="step-desc">Produza conteudo em lote, finalize seu produto e configure a pagina de vendas.</div>
+        </div>
+      </div>
+      <div class="plan-step">
+        <div class="step-dot">S3</div>
+        <div class="step-content">
+          <div class="step-week">Semana 3 - Dias 15 a 21</div>
+          <div class="step-title">Vendas</div>
+          <div class="step-desc">Lance seu produto, intensifique o conteudo e faca suas primeiras vendas reais.</div>
+        </div>
+      </div>
+      <div class="plan-step">
+        <div class="step-dot">S4</div>
+        <div class="step-content">
+          <div class="step-week">Semana 4 - Dias 22 a 30</div>
+          <div class="step-title">Otimizacao</div>
+          <div class="step-desc">Analise os dados, automatize processos e escale o que funcionou.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <!-- EDITAR: substitua SEU_LINK_KIWIFY e altere 27,90 se mudar o preco -->
+  <section class="final-cta fade-in" id="comprar">
+    <div class="section-label">Acesso imediato</div>
+    <h2 class="final-cta-title">Comece agora. Sua primeira venda pode ser hoje.</h2>
+    <p class="final-cta-desc">550 prompts prontos + bonus exclusivos + plano de 30 dias. Tudo em um unico produto.</p>
+
+    <div class="final-price-label">Investimento unico</div>
+    <div class="final-price"><sup>R$</sup>27<span style="font-size:55%;opacity:0.85">,90</span></div>
+
+    <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-hero" style="font-size:1rem;padding:18px 40px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Comprar agora - R$ 27,90
+    </a>
+
+    <p class="final-subtext">Pagamento seguro - Acesso imediato - Produto digital</p>
+  </section>
+
+  <footer>2026 - Produto Digital Premium - Todos os direitos reservados</footer>
+
+</div>
+
+<!-- BARRA FIXA - EDITAR: substitua SEU_LINK_KIWIFY e altere 27,90 se mudar o preco -->
+<div class="buy-bar">
+  <div class="buy-bar-text">
+    <strong>550 Prompts de IA</strong>
+    R$ 27,90 - Acesso imediato
+  </div>
+  <a href="https://pay.kiwify.com.br/Ggb62j9" target="_blank" rel="noopener" class="btn-buy">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     Comprar
   </a>
