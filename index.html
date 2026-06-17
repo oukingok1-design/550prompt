@@ -1,595 +1,558 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <!--
-â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
-â•‘           GUIA RÃPIDO DE EDIÃ‡ÃƒO â€” 550 PROMPTS DE IA             â•‘
-â•‘  Pesquise (Ctrl+F) por "âœï¸" para achar cada ponto editÃ¡vel      â•‘
-â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£
-â•‘  1. LINK DA KIWIFY                                               â•‘
-â•‘     â†’ Pesquise: SEU_LINK_KIWIFY                                 â•‘
-â•‘     â†’ Substitua pelo link do produto (3 ocorrÃªncias):           â•‘
-â•‘       Ex: https://pay.kiwify.com.br/XXXXXXX                     â•‘
-â•‘                                                                  â•‘
-â•‘  2. PREÃ‡O                                                        â•‘
-â•‘     â†’ Pesquise: 27,90                                           â•‘
-â•‘     â†’ Altere para o novo valor se necessÃ¡rio (3 ocorrÃªncias)    â•‘
-â•‘                                                                  â•‘
-â•‘  3. TÃTULO DA PÃGINA (aba do navegador)                         â•‘
-â•‘     â†’ Linha com <title> abaixo                                  â•‘
-â•‘                                                                  â•‘
-â•‘  4. TEXTOS DE CONTEÃšDO                                          â•‘
-â•‘     â†’ Localize normalmente no corpo do HTML                     â•‘
-â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  GUIA DE EDICAO RAPIDA
+  Pesquise por: SEU_LINK_KIWIFY  -> substitua pelo link do produto na Kiwify (3 lugares)
+  Pesquise por: 27,90            -> altere o preco se necessario (3 lugares)
 -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>550 Prompts de IA â€” Ganhe Dinheiro Online em 2026</title>
+<title>550 Prompts de IA - Ganhe Dinheiro Online em 2026</title>
+
+<!-- FONTES: carregadas via link para maior compatibilidade -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black:  #080808;
+  --card:   #111111;
+  --border: #1e1e1e;
+  --green:  #00FF88;
+  --white:  #f5f5f5;
+  --muted:  #888888;
+}
 
-  :root {
-    --black:   #080808;
-    --card:    #111111;
-    --border:  #1e1e1e;
-    --green:   #00FF88;
-    --green2:  #00cc6a;
-    --white:   #f5f5f5;
-    --muted:   #888;
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-mono:    'Space Mono', monospace;
-  }
+html { scroll-behavior: smooth; }
 
-  html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
 
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--font-display);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
+/* CANVAS BACKGROUND */
+#bg-canvas {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
 
-  /* â”€â”€ CANVAS BACKGROUND â”€â”€ */
-  #bg-canvas {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: .35;
-  }
+/* BARRA DE COMPRA FIXA */
+.buy-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 14px 20px;
+  background: rgba(8,8,8,0.95);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.buy-bar-text { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+.buy-bar-text strong { color: var(--white); display: block; font-size: 0.85rem; }
 
-  /* â”€â”€ STICKY BUY BAR â”€â”€ */
-  .buy-bar {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 14px 20px;
-    background: rgba(8,8,8,.92);
-    border-top: 1px solid var(--border);
-    backdrop-filter: blur(12px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .buy-bar-text { font-size: .72rem; color: var(--muted); line-height: 1.4; }
-  .buy-bar-text strong { color: var(--white); display: block; font-size: .85rem; }
-  .btn-buy {
-    flex-shrink: 0;
-    background: var(--green);
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    padding: 13px 22px;
-    font-family: var(--font-display);
-    font-size: .85rem;
-    font-weight: 700;
-    cursor: pointer;
-    letter-spacing: .03em;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: background .2s, transform .15s;
-    white-space: nowrap;
-  }
-  .btn-buy:hover { background: #00e07a; transform: scale(1.03); }
-  .btn-buy svg { width: 14px; height: 14px; }
+.btn-buy {
+  flex-shrink: 0;
+  background: var(--green);
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 22px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.btn-buy:hover { background: #00e07a; }
 
-  /* â”€â”€ WRAPPER â”€â”€ */
-  .wrap { position: relative; z-index: 1; }
+/* WRAPPER */
+.wrap { position: relative; z-index: 1; }
 
-  /* â”€â”€ HERO â”€â”€ */
-  .hero {
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 60px 24px 120px;
-    text-align: center;
-  }
-  .hero-eyebrow {
-    font-family: var(--font-mono);
-    font-size: .68rem;
-    letter-spacing: .18em;
-    color: var(--green);
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-  .hero-eyebrow::before,
-  .hero-eyebrow::after {
-    content: '';
-    display: block;
-    width: 28px;
-    height: 1px;
-    background: var(--green);
-    opacity: .5;
-  }
-  .hero-counter {
-    font-family: var(--font-mono);
-    font-size: clamp(5rem, 22vw, 9rem);
-    font-weight: 700;
-    line-height: .9;
-    color: var(--green);
-    letter-spacing: -.04em;
-    margin-bottom: 4px;
-    position: relative;
-    display: inline-block;
-  }
-  .hero-counter::after {
-    content: 'PROMPTS';
-    display: block;
-    font-family: var(--font-display);
-    font-size: clamp(.55rem, 2.5vw, .75rem);
-    letter-spacing: .3em;
-    color: var(--muted);
-    font-weight: 400;
-    margin-top: 2px;
-  }
-  .hero-title {
-    font-size: clamp(1.6rem, 6vw, 2.6rem);
-    font-weight: 700;
-    line-height: 1.15;
-    margin: 24px 0 16px;
-    max-width: 560px;
-    margin-inline: auto;
-  }
-  .hero-title span { color: var(--green); }
-  .hero-sub {
-    font-size: clamp(.85rem, 3vw, 1rem);
-    color: var(--muted);
-    line-height: 1.7;
-    max-width: 420px;
-    margin: 0 auto 36px;
-  }
-  .hero-tools {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 44px;
-  }
-  .tool-pill {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 6px 14px;
-    font-family: var(--font-mono);
-    font-size: .7rem;
-    color: var(--muted);
-    letter-spacing: .06em;
-  }
-  .tool-pill.active { border-color: var(--green); color: var(--green); }
-  .hero-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .btn-hero {
-    background: var(--green);
-    color: #000;
-    border: none;
-    border-radius: 10px;
-    padding: 17px 36px;
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all .2s;
-    letter-spacing: .02em;
-    box-shadow: 0 0 40px rgba(0,255,136,.2);
-  }
-  .btn-hero:hover { background: #00e07a; box-shadow: 0 0 60px rgba(0,255,136,.35); transform: translateY(-2px); }
-  .hero-guarantee {
-    font-size: .72rem;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 24px 120px;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.hero-eyebrow-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--green);
+  opacity: 0.5;
+}
+.hero-counter {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(5rem, 22vw, 9rem);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--green);
+  letter-spacing: -0.04em;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+.hero-counter-label {
+  display: block;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: clamp(0.55rem, 2.5vw, 0.75rem);
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-size: clamp(1.6rem, 6vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 24px auto 16px;
+  max-width: 560px;
+}
+.hero-title span { color: var(--green); }
+.hero-sub {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 auto 36px;
+}
+.hero-tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+.tool-pill {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.tool-pill.active { border-color: var(--green); color: var(--green); }
 
-  /* â”€â”€ SECTION STYLES â”€â”€ */
-  section { padding: 72px 24px; }
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: .65rem;
-    letter-spacing: .2em;
-    color: var(--green);
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .section-title {
-    font-size: clamp(1.5rem, 5vw, 2.2rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 12px;
-    max-width: 480px;
-  }
-  .section-title span { color: var(--green); }
-  .section-desc {
-    font-size: .9rem;
-    color: var(--muted);
-    line-height: 1.7;
-    max-width: 440px;
-    margin-bottom: 40px;
-  }
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.btn-hero {
+  background: var(--green);
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  padding: 17px 36px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 40px rgba(0,255,136,0.2);
+}
+.btn-hero:hover { background: #00e07a; box-shadow: 0 0 60px rgba(0,255,136,0.35); }
+.hero-guarantee {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
 
-  /* â”€â”€ STATS STRIP â”€â”€ */
-  .stats {
-    padding: 32px 24px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    text-align: center;
-    gap: 1px;
-    background: var(--border);
-  }
-  .stat {
-    background: var(--black);
-    padding: 20px 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .stat-num {
-    font-family: var(--font-mono);
-    font-size: clamp(1.4rem, 5vw, 2rem);
-    font-weight: 700;
-    color: var(--green);
-    line-height: 1;
-  }
-  .stat-lbl { font-size: .65rem; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+/* SECOES */
+section { padding: 72px 24px; }
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.section-title {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  max-width: 480px;
+}
+.section-title span { color: var(--green); }
+.section-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 40px;
+}
 
-  /* â”€â”€ CHAPTERS â”€â”€ */
-  .chapters { padding: 72px 24px; }
-  .chapters-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-top: 40px;
-  }
-  .chapter-item {
-    background: var(--card);
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px 20px;
-    transition: background .2s;
-    cursor: default;
-  }
-  .chapter-item:hover { background: #161616; }
-  .ch-num {
-    font-family: var(--font-mono);
-    font-size: .68rem;
-    color: var(--green);
-    opacity: .7;
-    min-width: 28px;
-    flex-shrink: 0;
-  }
-  .ch-name { font-size: .9rem; font-weight: 500; flex: 1; }
-  .ch-count {
-    font-family: var(--font-mono);
-    font-size: .7rem;
-    color: var(--muted);
-    flex-shrink: 0;
-  }
-  .chapter-item.bonus {
-    background: #0e1a13;
-    border-top: 1px solid rgba(0,255,136,.15);
-  }
-  .chapter-item.bonus .ch-name { color: var(--green); }
+/* STATS */
+.stats {
+  padding: 32px 24px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 1px;
+  background: var(--border);
+}
+.stat {
+  background: var(--black);
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+}
+.stat-lbl { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
 
-  /* â”€â”€ PROMPT PREVIEW â”€â”€ */
-  .preview { padding: 72px 24px; background: #0a0a0a; }
-  .prompt-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-top: 40px;
-  }
-  .prompt-card-header {
-    background: #161616;
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-  .dot { width: 10px; height: 10px; border-radius: 50%; }
-  .dot-r { background: #ff5f57; }
-  .dot-y { background: #febc2e; }
-  .dot-g { background: var(--green); }
-  .prompt-card-title {
-    font-family: var(--font-mono);
-    font-size: .72rem;
-    color: var(--muted);
-    margin-left: 4px;
-  }
-  .prompt-body { padding: 24px 20px; }
-  .prompt-field { margin-bottom: 20px; }
-  .prompt-field:last-child { margin-bottom: 0; }
-  .prompt-field-label {
-    font-family: var(--font-mono);
-    font-size: .62rem;
-    letter-spacing: .15em;
-    color: var(--green);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    opacity: .8;
-  }
-  .prompt-field-text {
-    font-size: .85rem;
-    color: var(--muted);
-    line-height: 1.65;
-  }
-  .prompt-text-box {
-    background: #0d0d0d;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-    font-family: var(--font-mono);
-    font-size: .78rem;
-    color: #d4d4d4;
-    line-height: 1.7;
-    position: relative;
-  }
-  .prompt-text-box .hl { color: var(--green); }
-  .prompt-tip {
-    background: rgba(0,255,136,.06);
-    border-left: 3px solid var(--green);
-    border-radius: 0 8px 8px 0;
-    padding: 12px 14px;
-    font-size: .82rem;
-    color: #bbb;
-    line-height: 1.6;
-  }
-  .prompt-tip strong { color: var(--green); }
+/* CAPITULOS */
+.chapters { padding: 72px 24px; }
+.chapters-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.chapter-item {
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+.chapter-item:hover { background: #161616; }
+.ch-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--green);
+  opacity: 0.7;
+  min-width: 28px;
+  flex-shrink: 0;
+}
+.ch-name { font-size: 0.9rem; font-weight: 500; flex: 1; }
+.ch-count {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.chapter-item.bonus {
+  background: #0e1a13;
+  border-top: 1px solid rgba(0,255,136,0.15);
+}
+.chapter-item.bonus .ch-name { color: var(--green); }
 
-  /* â”€â”€ FOR WHO â”€â”€ */
-  .for-who { padding: 72px 24px; }
-  .who-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 40px;
-  }
-  .who-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    transition: border-color .2s;
-  }
-  .who-card:hover { border-color: rgba(0,255,136,.3); }
-  .who-icon { font-size: 1.4rem; }
-  .who-title { font-size: .9rem; font-weight: 600; }
-  .who-desc { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+/* PREVIEW DE PROMPT */
+.preview { padding: 72px 24px; background: #0a0a0a; }
+.prompt-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.prompt-card-header {
+  background: #161616;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot-r { background: #ff5f57; }
+.dot-y { background: #febc2e; }
+.dot-g { background: var(--green); }
+.prompt-card-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-left: 4px;
+}
+.prompt-body { padding: 24px 20px; }
+.prompt-field { margin-bottom: 20px; }
+.prompt-field:last-child { margin-bottom: 0; }
+.prompt-field-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+.prompt-field-text {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.prompt-text-box {
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: #d4d4d4;
+  line-height: 1.7;
+}
+.prompt-text-box .hl { color: var(--green); }
+.prompt-tip {
+  background: rgba(0,255,136,0.06);
+  border-left: 3px solid var(--green);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+  font-size: 0.82rem;
+  color: #bbbbbb;
+  line-height: 1.6;
+}
+.prompt-tip strong { color: var(--green); }
 
-  /* â”€â”€ BONUS â”€â”€ */
-  .bonus-section { padding: 72px 24px; }
-  .bonus-card {
-    background: linear-gradient(135deg, #0e1a13 0%, #0a0a0a 100%);
-    border: 1px solid rgba(0,255,136,.2);
-    border-radius: 16px;
-    padding: 32px 24px;
-    margin-top: 40px;
-    position: relative;
-    overflow: hidden;
-  }
-  .bonus-card::before {
-    content: 'BÃ”NUS';
-    position: absolute;
-    top: -14px; right: 20px;
-    background: var(--green);
-    color: #000;
-    font-family: var(--font-mono);
-    font-size: .62rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    padding: 4px 10px;
-    border-radius: 100px;
-  }
-  .bonus-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 20px;
-  }
-  .bonus-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: .88rem;
-    line-height: 1.5;
-    color: #ccc;
-  }
-  .bonus-list li::before {
-    content: 'âœ¦';
-    color: var(--green);
-    font-size: .75rem;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
+/* PARA QUEM E */
+.for-who { padding: 72px 24px; }
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 40px;
+}
+.who-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.who-card:hover { border-color: rgba(0,255,136,0.3); }
+.who-icon { font-size: 1.4rem; }
+.who-title { font-size: 0.9rem; font-weight: 600; }
+.who-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
 
-  /* â”€â”€ PLAN â”€â”€ */
-  .plan-section { padding: 72px 24px; }
-  .plan-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-top: 40px;
-    position: relative;
-  }
-  .plan-steps::before {
-    content: '';
-    position: absolute;
-    left: 19px; top: 0; bottom: 0;
-    width: 1px;
-    background: var(--border);
-  }
-  .plan-step {
-    display: flex;
-    gap: 20px;
-    padding-bottom: 32px;
-    position: relative;
-  }
-  .plan-step:last-child { padding-bottom: 0; }
-  .step-dot {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: var(--black);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-mono);
-    font-size: .68rem;
-    color: var(--green);
-    flex-shrink: 0;
-    z-index: 1;
-  }
-  .step-content { padding-top: 6px; }
-  .step-week {
-    font-family: var(--font-mono);
-    font-size: .62rem;
-    color: var(--green);
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-    opacity: .8;
-  }
-  .step-title { font-size: .95rem; font-weight: 600; margin-bottom: 4px; }
-  .step-desc { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+/* BONUS */
+.bonus-section { padding: 72px 24px; }
+.bonus-card {
+  background: #0e1a13;
+  border: 1px solid rgba(0,255,136,0.2);
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-top: 40px;
+  position: relative;
+}
+.bonus-badge {
+  position: absolute;
+  top: -14px; right: 20px;
+  background: var(--green);
+  color: #000000;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+.bonus-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+.bonus-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #cccccc;
+}
+.bonus-icon { color: var(--green); flex-shrink: 0; margin-top: 1px; }
 
-  /* â”€â”€ FINAL CTA â”€â”€ */
-  .final-cta {
-    padding: 80px 24px 140px;
-    text-align: center;
-    background: radial-gradient(ellipse 70% 40% at 50% 100%, rgba(0,255,136,.07) 0%, transparent 70%);
-  }
-  .final-cta-title {
-    font-size: clamp(1.8rem, 6vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    max-width: 480px;
-    margin-inline: auto;
-  }
-  .final-cta-desc {
-    font-size: .9rem;
-    color: var(--muted);
-    margin-bottom: 36px;
-    max-width: 360px;
-    margin-inline: auto;
-    line-height: 1.7;
-  }
-  .final-price-label {
-    font-family: var(--font-mono);
-    font-size: .68rem;
-    letter-spacing: .15em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .final-price {
-    font-family: var(--font-mono);
-    font-size: clamp(2.2rem, 9vw, 3.5rem);
-    font-weight: 700;
-    color: var(--green);
-    line-height: 1;
-    margin-bottom: 28px;
-  }
-  .final-price sup { font-size: 45%; vertical-align: super; opacity: .7; }
-  .final-subtext { font-size: .72rem; color: var(--muted); margin-top: 14px; }
+/* PLANO */
+.plan-section { padding: 72px 24px; }
+.plan-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 40px;
+  position: relative;
+  padding-left: 0;
+}
+.plan-steps::before {
+  content: '';
+  position: absolute;
+  left: 19px; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.plan-step {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 32px;
+  position: relative;
+}
+.plan-step:last-child { padding-bottom: 0; }
+.step-dot {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--black);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--green);
+  flex-shrink: 0;
+  z-index: 1;
+}
+.step-content { padding-top: 6px; }
+.step-week {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+.step-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.step-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 
-  /* â”€â”€ FOOTER â”€â”€ */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 24px;
-    text-align: center;
-    font-size: .7rem;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    letter-spacing: .05em;
-    padding-bottom: 100px;
-  }
+/* CTA FINAL */
+.final-cta {
+  padding: 80px 24px 140px;
+  text-align: center;
+}
+.final-cta-title {
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 auto 16px;
+  max-width: 480px;
+}
+.final-cta-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 auto 36px;
+  max-width: 360px;
+  line-height: 1.7;
+}
+.final-price-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.final-price {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(2.2rem, 9vw, 3.5rem);
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 28px;
+}
+.final-price sup { font-size: 45%; vertical-align: super; opacity: 0.7; }
+.final-subtext { font-size: 0.72rem; color: var(--muted); margin-top: 14px; }
 
-  /* â”€â”€ FADE IN â”€â”€ */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity .7s ease, transform .7s ease;
-  }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 24px 100px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.05em;
+}
 
-  @media (min-width: 600px) {
-    .who-grid { grid-template-columns: repeat(3, 1fr); }
-  }
+/* FADE IN */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (min-width: 600px) {
+  .who-grid { grid-template-columns: repeat(3, 1fr); }
+}
 </style>
 </head>
 <body>
 
-<!-- Particle background -->
 <canvas id="bg-canvas"></canvas>
 
 <div class="wrap">
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-eyebrow">Produto Digital Premium Â· 2026</div>
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      Produto Digital Premium 2026
+      <span class="hero-eyebrow-line"></span>
+    </div>
 
-    <div class="hero-counter" id="counter">0</div>
+    <div>
+      <span class="hero-counter" id="counter">0</span>
+      <span class="hero-counter-label">Prompts de IA</span>
+    </div>
 
     <h1 class="hero-title">
-      Crie conteÃºdo, venda serviÃ§os e <span>ganhe dinheiro online</span> com IA
+      Crie conteudo, venda servicos e <span>ganhe dinheiro online</span> com IA
     </h1>
 
     <p class="hero-sub">
-      Prompts prontos para copiar e colar no ChatGPT, Claude e Gemini. Resultados imediatos, sem experiÃªncia necessÃ¡ria.
+      Prompts prontos para copiar e colar no ChatGPT, Claude e Gemini. Resultados imediatos, sem experiencia necessaria.
     </p>
 
     <div class="hero-tools">
@@ -601,12 +564,12 @@
     </div>
 
     <div class="hero-cta">
-      <!-- âœï¸ BOTÃƒO HERO (topo): substitua SEU_LINK_KIWIFY pelo link real da Kiwify -->
+      <!-- EDITAR: substitua SEU_LINK_KIWIFY pelo link real -->
       <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-hero">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Quero os 550 Prompts â€” R$&nbsp;27,90
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Quero os 550 Prompts - R$ 27,90
       </a>
-      <span class="hero-guarantee">ðŸ”’ Acesso imediato apÃ³s o pagamento</span>
+      <span class="hero-guarantee">Acesso imediato apos o pagamento</span>
     </div>
   </section>
 
@@ -622,98 +585,100 @@
     </div>
     <div class="stat">
       <span class="stat-num">0</span>
-      <span class="stat-lbl">ExperiÃªncia necessÃ¡ria</span>
+      <span class="stat-lbl">Experiencia necessaria</span>
     </div>
   </div>
 
-  <!-- CHAPTERS -->
+  <!-- CAPITULOS -->
   <section class="chapters fade-in">
-    <div class="section-label">O que estÃ¡ incluÃ­do</div>
-    <h2 class="section-title">10 capÃ­tulos + <span>bÃ´nus premium</span></h2>
-    <p class="section-desc">Cada capÃ­tulo tem 50 prompts completos com objetivo, instruÃ§Ã£o, resultado esperado e dica extra.</p>
+    <div class="section-label">O que esta incluido</div>
+    <h2 class="section-title">10 capitulos + <span>bonus premium</span></h2>
+    <p class="section-desc">Cada capitulo tem 50 prompts completos com objetivo, instrucao, resultado esperado e dica extra.</p>
 
     <div class="chapters-grid">
-      <div class="chapter-item"><span class="ch-num">01</span><span class="ch-name">CriaÃ§Ã£o de Ebooks</span><span class="ch-count">50 prompts</span></div>
-      <div class="chapter-item"><span class="ch-num">02</span><span class="ch-name">TikTok &amp; ConteÃºdo Dark</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">01</span><span class="ch-name">Criacao de Ebooks</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">02</span><span class="ch-name">TikTok e Conteudo Dark</span><span class="ch-count">50 prompts</span></div>
       <div class="chapter-item"><span class="ch-num">03</span><span class="ch-name">Instagram</span><span class="ch-count">50 prompts</span></div>
       <div class="chapter-item"><span class="ch-num">04</span><span class="ch-name">YouTube</span><span class="ch-count">50 prompts</span></div>
       <div class="chapter-item"><span class="ch-num">05</span><span class="ch-name">Freelancing</span><span class="ch-count">50 prompts</span></div>
       <div class="chapter-item"><span class="ch-num">06</span><span class="ch-name">Marketing de Afiliados</span><span class="ch-count">50 prompts</span></div>
-      <div class="chapter-item"><span class="ch-num">07</span><span class="ch-name">CriaÃ§Ã£o de Cursos Online</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">07</span><span class="ch-name">Criacao de Cursos Online</span><span class="ch-count">50 prompts</span></div>
       <div class="chapter-item"><span class="ch-num">08</span><span class="ch-name">Sites e Landing Pages</span><span class="ch-count">50 prompts</span></div>
       <div class="chapter-item"><span class="ch-num">09</span><span class="ch-name">Pinterest</span><span class="ch-count">50 prompts</span></div>
-      <div class="chapter-item"><span class="ch-num">10</span><span class="ch-name">NegÃ³cios Digitais &amp; IA</span><span class="ch-count">50 prompts</span></div>
-      <div class="chapter-item bonus"><span class="ch-num">â˜…</span><span class="ch-name">BÃ´nus: Prompts AvanÃ§ados Premium</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">10</span><span class="ch-name">Negocios Digitais e IA</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item bonus"><span class="ch-num">+</span><span class="ch-name">Bonus: Prompts Avancados Premium</span><span class="ch-count">50 prompts</span></div>
     </div>
   </section>
 
-  <!-- PROMPT PREVIEW -->
+  <!-- PREVIEW -->
   <section class="preview fade-in">
     <div class="section-label">Amostra real</div>
     <h2 class="section-title">Veja como os <span>prompts funcionam</span></h2>
-    <p class="section-desc">Cada prompt Ã© completo, detalhado e pronto para usar agora mesmo.</p>
+    <p class="section-desc">Cada prompt e completo, detalhado e pronto para usar agora mesmo.</p>
 
     <div class="prompt-card">
       <div class="prompt-card-header">
-        <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-        <span class="prompt-card-title">prompt_001.txt â€” Gerador de Ideia de Ebook Lucrativo</span>
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="prompt-card-title">prompt_001.txt - Gerador de Ideia de Ebook Lucrativo</span>
       </div>
       <div class="prompt-body">
         <div class="prompt-field">
           <div class="prompt-field-label">Objetivo</div>
-          <div class="prompt-field-text">Encontrar um tema de ebook com alto potencial de venda no seu nicho, com tÃ­tulos validados e preÃ§os de mercado.</div>
+          <div class="prompt-field-text">Encontrar um tema de ebook com alto potencial de venda no seu nicho, com titulos validados e precos de mercado.</div>
         </div>
         <div class="prompt-field">
-          <div class="prompt-field-label">Prompt â€” copie e cole no ChatGPT, Claude ou Gemini</div>
-          <div class="prompt-text-box">Atue como especialista em mercado editorial digital. Me dÃª <span class="hl">10 ideias de ebooks</span> sobre <span class="hl">[seu nicho]</span> com alta demanda em 2026, com tÃ­tulos atrativos, pÃºblico-alvo especÃ­fico e proposta de valor clara. Inclua estimativa do preÃ§o ideal de venda para cada um.</div>
+          <div class="prompt-field-label">Prompt - copie e cole no ChatGPT, Claude ou Gemini</div>
+          <div class="prompt-text-box">Atue como especialista em mercado editorial digital. Me de <span class="hl">10 ideias de ebooks</span> sobre <span class="hl">[seu nicho]</span> com alta demanda em 2026, com titulos atrativos, publico-alvo especifico e proposta de valor clara. Inclua estimativa do preco ideal de venda para cada um.</div>
         </div>
         <div class="prompt-field">
           <div class="prompt-field-label">Resultado esperado</div>
-          <div class="prompt-field-text">Lista de 10 ideias de ebooks com tÃ­tulos, pÃºblico-alvo e preÃ§os sugeridos para cada um.</div>
+          <div class="prompt-field-text">Lista de 10 ideias de ebooks com titulos, publico-alvo e precos sugeridos para cada um.</div>
         </div>
         <div class="prompt-field">
           <div class="prompt-field-label">Dica extra</div>
-          <div class="prompt-tip"><strong>ðŸ’¡</strong> Pesquise os tÃ­tulos sugeridos na Kiwify e Hotmart para confirmar demanda real antes de criar.</div>
+          <div class="prompt-tip"><strong>Dica:</strong> Pesquise os titulos sugeridos na Kiwify e Hotmart para confirmar demanda real antes de criar.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOR WHO -->
+  <!-- PARA QUEM E -->
   <section class="for-who fade-in">
-    <div class="section-label">Para quem Ã©</div>
+    <div class="section-label">Para quem e</div>
     <h2 class="section-title">Qualquer pessoa pode <span>usar isso hoje</span></h2>
 
     <div class="who-grid">
       <div class="who-card">
-        <div class="who-icon">ðŸš€</div>
+        <div class="who-icon">&#128640;</div>
         <div class="who-title">Iniciantes</div>
-        <div class="who-desc">Sem experiÃªncia? Sem problema. Os prompts guiam vocÃª passo a passo.</div>
+        <div class="who-desc">Sem experiencia? Sem problema. Os prompts guiam voce passo a passo.</div>
       </div>
       <div class="who-card">
-        <div class="who-icon">ðŸ’¼</div>
+        <div class="who-icon">&#128188;</div>
         <div class="who-title">Freelancers</div>
         <div class="who-desc">Entregue trabalhos melhores em menos tempo e atraia mais clientes.</div>
       </div>
       <div class="who-card">
-        <div class="who-icon">ðŸ“±</div>
+        <div class="who-icon">&#128247;</div>
         <div class="who-title">Criadores</div>
-        <div class="who-desc">Produza conteÃºdo de qualidade para TikTok, Instagram e YouTube.</div>
+        <div class="who-desc">Produza conteudo de qualidade para TikTok, Instagram e YouTube.</div>
       </div>
       <div class="who-card">
-        <div class="who-icon">ðŸ”—</div>
+        <div class="who-icon">&#128279;</div>
         <div class="who-title">Afiliados</div>
-        <div class="who-desc">Gere trÃ¡fego orgÃ¢nico, emails e reviews que convertem em comissÃµes.</div>
+        <div class="who-desc">Gere trafego organico, emails e reviews que convertem em comissoes.</div>
       </div>
       <div class="who-card">
-        <div class="who-icon">ðŸŽ“</div>
+        <div class="who-icon">&#127891;</div>
         <div class="who-title">Infoprodutores</div>
-        <div class="who-desc">Crie cursos, ebooks e landing pages com 10Ã— mais velocidade.</div>
+        <div class="who-desc">Crie cursos, ebooks e landing pages com 10x mais velocidade.</div>
       </div>
       <div class="who-card">
-        <div class="who-icon">âš¡</div>
+        <div class="who-icon">&#9889;</div>
         <div class="who-title">Empreendedores</div>
-        <div class="who-desc">Automatize processos e escale seu negÃ³cio digital com IA.</div>
+        <div class="who-desc">Automatize processos e escale seu negocio digital com IA.</div>
       </div>
     </div>
   </section>
@@ -721,145 +686,131 @@
   <!-- BONUS -->
   <section class="bonus-section fade-in">
     <div class="section-label">Incluso sem custo extra</div>
-    <h2 class="section-title"><span>BÃ´nus exclusivos</span> para vocÃª</h2>
+    <h2 class="section-title"><span>Bonus exclusivos</span> para voce</h2>
 
     <div class="bonus-card">
-      <div class="bonus-list">
-        <li>Plano de AÃ§Ã£o de 30 Dias â€” do zero ao primeiro resultado com cronograma semana a semana</li>
-        <li>50 Prompts AvanÃ§ados Premium â€” os mais poderosos da coleÃ§Ã£o, para usuÃ¡rios que querem ir alÃ©m</li>
-        <li>Guia de Ferramentas de IA 2026 â€” as melhores ferramentas gratuitas e pagas para cada objetivo</li>
-        <li>Checklist de Produto Digital Profissional â€” valide seu produto antes de lanÃ§ar e evite erros comuns</li>
-        <li>Templates de Bio e Perfil para Redes Sociais â€” bios otimizadas para TikTok, Instagram e LinkedIn</li>
-      </div>
+      <span class="bonus-badge">BONUS</span>
+      <ul class="bonus-list">
+        <li><span class="bonus-icon">+</span> Plano de Acao de 30 Dias - do zero ao primeiro resultado com cronograma semana a semana</li>
+        <li><span class="bonus-icon">+</span> 50 Prompts Avancados Premium - os mais poderosos da colecao, para usuarios que querem ir alem</li>
+        <li><span class="bonus-icon">+</span> Guia de Ferramentas de IA 2026 - as melhores ferramentas gratuitas e pagas para cada objetivo</li>
+        <li><span class="bonus-icon">+</span> Checklist de Produto Digital Profissional - valide seu produto antes de lancar e evite erros comuns</li>
+        <li><span class="bonus-icon">+</span> Templates de Bio e Perfil para Redes Sociais - bios otimizadas para TikTok, Instagram e LinkedIn</li>
+      </ul>
     </div>
   </section>
 
-  <!-- PLAN -->
+  <!-- PLANO -->
   <section class="plan-section fade-in">
-    <div class="section-label">Plano de aÃ§Ã£o</div>
+    <div class="section-label">Plano de acao</div>
     <h2 class="section-title">Do zero ao resultado <span>em 30 dias</span></h2>
 
     <div class="plan-steps">
       <div class="plan-step">
         <div class="step-dot">S1</div>
         <div class="step-content">
-          <div class="step-week">Semana 1 Â· Dias 1â€“7</div>
-          <div class="step-title">FundaÃ§Ã£o</div>
-          <div class="step-desc">Defina seu nicho, crie sua persona com IA e estruture seu primeiro produto ou serviÃ§o digital.</div>
+          <div class="step-week">Semana 1 - Dias 1 a 7</div>
+          <div class="step-title">Fundacao</div>
+          <div class="step-desc">Defina seu nicho, crie sua persona com IA e estruture seu primeiro produto ou servico digital.</div>
         </div>
       </div>
       <div class="plan-step">
         <div class="step-dot">S2</div>
         <div class="step-content">
-          <div class="step-week">Semana 2 Â· Dias 8â€“14</div>
-          <div class="step-title">CriaÃ§Ã£o</div>
-          <div class="step-desc">Produza conteÃºdo em lote, finalize seu produto e configure a pÃ¡gina de vendas.</div>
+          <div class="step-week">Semana 2 - Dias 8 a 14</div>
+          <div class="step-title">Criacao</div>
+          <div class="step-desc">Produza conteudo em lote, finalize seu produto e configure a pagina de vendas.</div>
         </div>
       </div>
       <div class="plan-step">
         <div class="step-dot">S3</div>
         <div class="step-content">
-          <div class="step-week">Semana 3 Â· Dias 15â€“21</div>
+          <div class="step-week">Semana 3 - Dias 15 a 21</div>
           <div class="step-title">Vendas</div>
-          <div class="step-desc">Lance seu produto, intensifique o conteÃºdo e faÃ§a suas primeiras vendas reais.</div>
+          <div class="step-desc">Lance seu produto, intensifique o conteudo e faca suas primeiras vendas reais.</div>
         </div>
       </div>
       <div class="plan-step">
         <div class="step-dot">S4</div>
         <div class="step-content">
-          <div class="step-week">Semana 4 Â· Dias 22â€“30</div>
-          <div class="step-title">OtimizaÃ§Ã£o</div>
+          <div class="step-week">Semana 4 - Dias 22 a 30</div>
+          <div class="step-title">Otimizacao</div>
           <div class="step-desc">Analise os dados, automatize processos e escale o que funcionou.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SEÃ‡ÃƒO DE PREÃ‡O E COMPRA
-       âœï¸  EDITAR AQUI:
-         â€¢ PreÃ§o exibido â†’ altere "27,90" nas linhas abaixo
-         â€¢ Link do botÃ£o â†’ substitua SEU_LINK_KIWIFY pelo link real
-       ============================================================ -->
+  <!-- CTA FINAL -->
+  <!-- EDITAR: substitua SEU_LINK_KIWIFY e altere 27,90 se mudar o preco -->
   <section class="final-cta fade-in" id="comprar">
     <div class="section-label">Acesso imediato</div>
     <h2 class="final-cta-title">Comece agora. Sua primeira venda pode ser hoje.</h2>
-    <p class="final-cta-desc">550 prompts prontos + bÃ´nus exclusivos + plano de 30 dias. Tudo em um Ãºnico produto.</p>
+    <p class="final-cta-desc">550 prompts prontos + bonus exclusivos + plano de 30 dias. Tudo em um unico produto.</p>
 
-    <!-- BLOCO DE PREÃ‡O -->
-    <div class="final-price-label">Investimento Ãºnico</div>
+    <div class="final-price-label">Investimento unico</div>
+    <div class="final-price"><sup>R$</sup>27<span style="font-size:55%;opacity:0.85">,90</span></div>
 
-    <!-- âœï¸ PREÃ‡O: altere "27,90" se mudar o valor -->
-    <div class="final-price"><sup>R$</sup>27<span style="font-size:55%;opacity:.85">,90</span></div>
-
-    <!-- âœï¸ BOTÃƒO PRINCIPAL: substitua SEU_LINK_KIWIFY pelo link do seu produto na Kiwify
-         Exemplo: href="https://pay.kiwify.com.br/XXXXXXX"                              -->
-    <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-hero" style="font-size:1rem;padding:18px 40px;box-shadow:0 0 60px rgba(0,255,136,.25)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      Comprar agora â€” R$&nbsp;27,90
+    <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-hero" style="font-size:1rem;padding:18px 40px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Comprar agora - R$ 27,90
     </a>
 
-    <p class="final-subtext">ðŸ”’ Pagamento seguro Â· Acesso imediato Â· Produto digital</p>
+    <p class="final-subtext">Pagamento seguro - Acesso imediato - Produto digital</p>
   </section>
 
-  <footer>Â© 2026 â€” Produto Digital Premium Â· Todos os direitos reservados</footer>
+  <footer>2026 - Produto Digital Premium - Todos os direitos reservados</footer>
 
 </div>
 
-<!-- ============================================================
-     BARRA FIXA DE COMPRA (aparece em todas as telas)
-     âœï¸  EDITAR AQUI:
-       â€¢ PreÃ§o â†’ altere "R$ 27,90" abaixo
-       â€¢ Link  â†’ substitua SEU_LINK_KIWIFY pelo link real da Kiwify
-     ============================================================ -->
+<!-- BARRA FIXA - EDITAR: substitua SEU_LINK_KIWIFY e altere 27,90 se mudar o preco -->
 <div class="buy-bar">
   <div class="buy-bar-text">
     <strong>550 Prompts de IA</strong>
-    <!-- âœï¸ PREÃ‡O NA BARRA: altere se mudar o valor -->
-    R$ 27,90 Â· Acesso imediato
+    R$ 27,90 - Acesso imediato
   </div>
-  <!-- âœï¸ LINK DA BARRA: substitua SEU_LINK_KIWIFY -->
   <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-buy">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     Comprar
   </a>
 </div>
 
 <script>
-/* â”€â”€ PARTICLE CANVAS â”€â”€ */
+/* PARTICULAS NO FUNDO */
 (function(){
-  const canvas = document.getElementById('bg-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
+  var canvas = document.getElementById('bg-canvas');
+  var ctx = canvas.getContext('2d');
+  var W, H, particles = [];
 
   function resize(){
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
   }
 
-  const CHARS = ['0','1','{','}','<','>','/','#','$','@','â†’','âœ¦','Â·'];
-  const GREEN = '#00FF88';
+  var CHARS = ['0','1','{','}','<','>','/','#','$','@'];
+  var GREEN = '#00FF88';
 
-  function initParticles(){
+  function init(){
     particles = [];
-    const count = Math.min(60, Math.floor(W * H / 14000));
-    for(let i=0;i<count;i++){
+    var count = Math.min(60, Math.floor(W * H / 14000));
+    for(var i=0; i<count; i++){
       particles.push({
         x: Math.random()*W,
         y: Math.random()*H,
         char: CHARS[Math.floor(Math.random()*CHARS.length)],
         size: 9 + Math.random()*7,
-        speed: .15 + Math.random()*.3,
-        alpha: .08 + Math.random()*.18,
-        drift: (Math.random()-.5)*.3
+        speed: 0.15 + Math.random()*0.3,
+        alpha: 0.08 + Math.random()*0.18,
+        drift: (Math.random()-0.5)*0.3
       });
     }
   }
 
   function draw(){
     ctx.clearRect(0,0,W,H);
-    particles.forEach(p=>{
-      ctx.font = `${p.size}px 'Space Mono', monospace`;
+    for(var i=0; i<particles.length; i++){
+      var p = particles[i];
+      ctx.font = p.size + "px 'Space Mono', monospace";
       ctx.fillStyle = GREEN;
       ctx.globalAlpha = p.alpha;
       ctx.fillText(p.char, p.x, p.y);
@@ -867,42 +818,843 @@
       p.x += p.drift;
       if(p.y < -20){ p.y = H+20; p.x = Math.random()*W; p.char = CHARS[Math.floor(Math.random()*CHARS.length)]; }
       if(p.x < -20 || p.x > W+20){ p.x = Math.random()*W; }
-    });
+    }
     ctx.globalAlpha = 1;
     requestAnimationFrame(draw);
   }
 
   resize();
-  initParticles();
+  init();
   draw();
-  window.addEventListener('resize', ()=>{ resize(); initParticles(); });
+  window.addEventListener('resize', function(){ resize(); init(); });
 })();
 
-/* â”€â”€ COUNTER ANIMATION â”€â”€ */
+/* CONTADOR ANIMADO */
 (function(){
-  const el = document.getElementById('counter');
-  const target = 550;
-  let start = null;
-  const duration = 1800;
-  const ease = t => t < .5 ? 2*t*t : -1+(4-2*t)*t;
+  var el = document.getElementById('counter');
+  var target = 550;
+  var start = null;
+  var duration = 1800;
+
+  function ease(t){ return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
 
   function step(ts){
     if(!start) start = ts;
-    const prog = Math.min((ts-start)/duration, 1);
+    var prog = Math.min((ts-start)/duration, 1);
     el.textContent = Math.round(ease(prog)*target);
-    if(prog < 1) requestAnimationFrame(step);
-    else el.textContent = target;
+    if(prog < 1){ requestAnimationFrame(step); }
+    else { el.textContent = target; }
   }
-  setTimeout(()=>requestAnimationFrame(step), 300);
+  setTimeout(function(){ requestAnimationFrame(step); }, 300);
 })();
 
-/* â”€â”€ FADE IN ON SCROLL â”€â”€ */
+/* FADE IN AO ROLAR */
 (function(){
-  const els = document.querySelectorAll('.fade-in');
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: .12 });
-  els.forEach(el=>io.observe(el));
+  var els = document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('visible'); });
+  }
+})();
+</script>
+</body>
+</html>
+  border-radius: 8px;
+  padding: 13px 22px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.btn-buy:hover { background: #00e07a; }
+
+/* WRAPPER */
+.wrap { position: relative; z-index: 1; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 24px 120px;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.hero-eyebrow-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--green);
+  opacity: 0.5;
+}
+.hero-counter {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(5rem, 22vw, 9rem);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--green);
+  letter-spacing: -0.04em;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+.hero-counter-label {
+  display: block;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: clamp(0.55rem, 2.5vw, 0.75rem);
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-size: clamp(1.6rem, 6vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 24px auto 16px;
+  max-width: 560px;
+}
+.hero-title span { color: var(--green); }
+.hero-sub {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 auto 36px;
+}
+.hero-tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+.tool-pill {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.tool-pill.active { border-color: var(--green); color: var(--green); }
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.btn-hero {
+  background: var(--green);
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  padding: 17px 36px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 40px rgba(0,255,136,0.2);
+}
+.btn-hero:hover { background: #00e07a; box-shadow: 0 0 60px rgba(0,255,136,0.35); }
+.hero-guarantee {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* SECOES */
+section { padding: 72px 24px; }
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.section-title {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  max-width: 480px;
+}
+.section-title span { color: var(--green); }
+.section-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 40px;
+}
+
+/* STATS */
+.stats {
+  padding: 32px 24px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 1px;
+  background: var(--border);
+}
+.stat {
+  background: var(--black);
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+}
+.stat-lbl { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* CAPITULOS */
+.chapters { padding: 72px 24px; }
+.chapters-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.chapter-item {
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+.chapter-item:hover { background: #161616; }
+.ch-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--green);
+  opacity: 0.7;
+  min-width: 28px;
+  flex-shrink: 0;
+}
+.ch-name { font-size: 0.9rem; font-weight: 500; flex: 1; }
+.ch-count {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.chapter-item.bonus {
+  background: #0e1a13;
+  border-top: 1px solid rgba(0,255,136,0.15);
+}
+.chapter-item.bonus .ch-name { color: var(--green); }
+
+/* PREVIEW DE PROMPT */
+.preview { padding: 72px 24px; background: #0a0a0a; }
+.prompt-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.prompt-card-header {
+  background: #161616;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot-r { background: #ff5f57; }
+.dot-y { background: #febc2e; }
+.dot-g { background: var(--green); }
+.prompt-card-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-left: 4px;
+}
+.prompt-body { padding: 24px 20px; }
+.prompt-field { margin-bottom: 20px; }
+.prompt-field:last-child { margin-bottom: 0; }
+.prompt-field-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+.prompt-field-text {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.prompt-text-box {
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: #d4d4d4;
+  line-height: 1.7;
+}
+.prompt-text-box .hl { color: var(--green); }
+.prompt-tip {
+  background: rgba(0,255,136,0.06);
+  border-left: 3px solid var(--green);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+  font-size: 0.82rem;
+  color: #bbbbbb;
+  line-height: 1.6;
+}
+.prompt-tip strong { color: var(--green); }
+
+/* PARA QUEM E */
+.for-who { padding: 72px 24px; }
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 40px;
+}
+.who-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.who-card:hover { border-color: rgba(0,255,136,0.3); }
+.who-icon { font-size: 1.4rem; }
+.who-title { font-size: 0.9rem; font-weight: 600; }
+.who-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+/* BONUS */
+.bonus-section { padding: 72px 24px; }
+.bonus-card {
+  background: #0e1a13;
+  border: 1px solid rgba(0,255,136,0.2);
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-top: 40px;
+  position: relative;
+}
+.bonus-badge {
+  position: absolute;
+  top: -14px; right: 20px;
+  background: var(--green);
+  color: #000000;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+.bonus-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+.bonus-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #cccccc;
+}
+.bonus-icon { color: var(--green); flex-shrink: 0; margin-top: 1px; }
+
+/* PLANO */
+.plan-section { padding: 72px 24px; }
+.plan-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 40px;
+  position: relative;
+  padding-left: 0;
+}
+.plan-steps::before {
+  content: '';
+  position: absolute;
+  left: 19px; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.plan-step {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 32px;
+  position: relative;
+}
+.plan-step:last-child { padding-bottom: 0; }
+.step-dot {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--black);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--green);
+  flex-shrink: 0;
+  z-index: 1;
+}
+.step-content { padding-top: 6px; }
+.step-week {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+.step-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.step-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* CTA FINAL */
+.final-cta {
+  padding: 80px 24px 140px;
+  text-align: center;
+}
+.final-cta-title {
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 auto 16px;
+  max-width: 480px;
+}
+.final-cta-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 auto 36px;
+  max-width: 360px;
+  line-height: 1.7;
+}
+.final-price-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.final-price {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(2.2rem, 9vw, 3.5rem);
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 28px;
+}
+.final-price sup { font-size: 45%; vertical-align: super; opacity: 0.7; }
+.final-subtext { font-size: 0.72rem; color: var(--muted); margin-top: 14px; }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 24px 100px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* FADE IN */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (min-width: 600px) {
+  .who-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      Produto Digital Premium 2026
+      <span class="hero-eyebrow-line"></span>
+    </div>
+
+    <div>
+      <span class="hero-counter" id="counter">0</span>
+      <span class="hero-counter-label">Prompts de IA</span>
+    </div>
+
+    <h1 class="hero-title">
+      Crie conteudo, venda servicos e <span>ganhe dinheiro online</span> com IA
+    </h1>
+
+    <p class="hero-sub">
+      Prompts prontos para copiar e colar no ChatGPT, Claude e Gemini. Resultados imediatos, sem experiencia necessaria.
+    </p>
+
+    <div class="hero-tools">
+      <span class="tool-pill active">ChatGPT</span>
+      <span class="tool-pill active">Claude</span>
+      <span class="tool-pill active">Gemini</span>
+      <span class="tool-pill">Grok</span>
+      <span class="tool-pill">Copilot</span>
+    </div>
+
+    <div class="hero-cta">
+      <!-- EDITAR: substitua SEU_LINK_KIWIFY pelo link real -->
+      <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-hero">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Quero os 550 Prompts - R$ 27,90
+      </a>
+      <span class="hero-guarantee">Acesso imediato apos o pagamento</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats fade-in">
+    <div class="stat">
+      <span class="stat-num">550</span>
+      <span class="stat-lbl">Prompts prontos</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">10+</span>
+      <span class="stat-lbl">Categorias</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">0</span>
+      <span class="stat-lbl">Experiencia necessaria</span>
+    </div>
+  </div>
+
+  <!-- CAPITULOS -->
+  <section class="chapters fade-in">
+    <div class="section-label">O que esta incluido</div>
+    <h2 class="section-title">10 capitulos + <span>bonus premium</span></h2>
+    <p class="section-desc">Cada capitulo tem 50 prompts completos com objetivo, instrucao, resultado esperado e dica extra.</p>
+
+    <div class="chapters-grid">
+      <div class="chapter-item"><span class="ch-num">01</span><span class="ch-name">Criacao de Ebooks</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">02</span><span class="ch-name">TikTok e Conteudo Dark</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">03</span><span class="ch-name">Instagram</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">04</span><span class="ch-name">YouTube</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">05</span><span class="ch-name">Freelancing</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">06</span><span class="ch-name">Marketing de Afiliados</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">07</span><span class="ch-name">Criacao de Cursos Online</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">08</span><span class="ch-name">Sites e Landing Pages</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">09</span><span class="ch-name">Pinterest</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item"><span class="ch-num">10</span><span class="ch-name">Negocios Digitais e IA</span><span class="ch-count">50 prompts</span></div>
+      <div class="chapter-item bonus"><span class="ch-num">+</span><span class="ch-name">Bonus: Prompts Avancados Premium</span><span class="ch-count">50 prompts</span></div>
+    </div>
+  </section>
+
+  <!-- PREVIEW -->
+  <section class="preview fade-in">
+    <div class="section-label">Amostra real</div>
+    <h2 class="section-title">Veja como os <span>prompts funcionam</span></h2>
+    <p class="section-desc">Cada prompt e completo, detalhado e pronto para usar agora mesmo.</p>
+
+    <div class="prompt-card">
+      <div class="prompt-card-header">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="prompt-card-title">prompt_001.txt - Gerador de Ideia de Ebook Lucrativo</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-field">
+          <div class="prompt-field-label">Objetivo</div>
+          <div class="prompt-field-text">Encontrar um tema de ebook com alto potencial de venda no seu nicho, com titulos validados e precos de mercado.</div>
+        </div>
+        <div class="prompt-field">
+          <div class="prompt-field-label">Prompt - copie e cole no ChatGPT, Claude ou Gemini</div>
+          <div class="prompt-text-box">Atue como especialista em mercado editorial digital. Me de <span class="hl">10 ideias de ebooks</span> sobre <span class="hl">[seu nicho]</span> com alta demanda em 2026, com titulos atrativos, publico-alvo especifico e proposta de valor clara. Inclua estimativa do preco ideal de venda para cada um.</div>
+        </div>
+        <div class="prompt-field">
+          <div class="prompt-field-label">Resultado esperado</div>
+          <div class="prompt-field-text">Lista de 10 ideias de ebooks com titulos, publico-alvo e precos sugeridos para cada um.</div>
+        </div>
+        <div class="prompt-field">
+          <div class="prompt-field-label">Dica extra</div>
+          <div class="prompt-tip"><strong>Dica:</strong> Pesquise os titulos sugeridos na Kiwify e Hotmart para confirmar demanda real antes de criar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM E -->
+  <section class="for-who fade-in">
+    <div class="section-label">Para quem e</div>
+    <h2 class="section-title">Qualquer pessoa pode <span>usar isso hoje</span></h2>
+
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-icon">&#128640;</div>
+        <div class="who-title">Iniciantes</div>
+        <div class="who-desc">Sem experiencia? Sem problema. Os prompts guiam voce passo a passo.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#128188;</div>
+        <div class="who-title">Freelancers</div>
+        <div class="who-desc">Entregue trabalhos melhores em menos tempo e atraia mais clientes.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#128247;</div>
+        <div class="who-title">Criadores</div>
+        <div class="who-desc">Produza conteudo de qualidade para TikTok, Instagram e YouTube.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#128279;</div>
+        <div class="who-title">Afiliados</div>
+        <div class="who-desc">Gere trafego organico, emails e reviews que convertem em comissoes.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#127891;</div>
+        <div class="who-title">Infoprodutores</div>
+        <div class="who-desc">Crie cursos, ebooks e landing pages com 10x mais velocidade.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">&#9889;</div>
+        <div class="who-title">Empreendedores</div>
+        <div class="who-desc">Automatize processos e escale seu negocio digital com IA.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUS -->
+  <section class="bonus-section fade-in">
+    <div class="section-label">Incluso sem custo extra</div>
+    <h2 class="section-title"><span>Bonus exclusivos</span> para voce</h2>
+
+    <div class="bonus-card">
+      <span class="bonus-badge">BONUS</span>
+      <ul class="bonus-list">
+        <li><span class="bonus-icon">+</span> Plano de Acao de 30 Dias - do zero ao primeiro resultado com cronograma semana a semana</li>
+        <li><span class="bonus-icon">+</span> 50 Prompts Avancados Premium - os mais poderosos da colecao, para usuarios que querem ir alem</li>
+        <li><span class="bonus-icon">+</span> Guia de Ferramentas de IA 2026 - as melhores ferramentas gratuitas e pagas para cada objetivo</li>
+        <li><span class="bonus-icon">+</span> Checklist de Produto Digital Profissional - valide seu produto antes de lancar e evite erros comuns</li>
+        <li><span class="bonus-icon">+</span> Templates de Bio e Perfil para Redes Sociais - bios otimizadas para TikTok, Instagram e LinkedIn</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PLANO -->
+  <section class="plan-section fade-in">
+    <div class="section-label">Plano de acao</div>
+    <h2 class="section-title">Do zero ao resultado <span>em 30 dias</span></h2>
+
+    <div class="plan-steps">
+      <div class="plan-step">
+        <div class="step-dot">S1</div>
+        <div class="step-content">
+          <div class="step-week">Semana 1 - Dias 1 a 7</div>
+          <div class="step-title">Fundacao</div>
+          <div class="step-desc">Defina seu nicho, crie sua persona com IA e estruture seu primeiro produto ou servico digital.</div>
+        </div>
+      </div>
+      <div class="plan-step">
+        <div class="step-dot">S2</div>
+        <div class="step-content">
+          <div class="step-week">Semana 2 - Dias 8 a 14</div>
+          <div class="step-title">Criacao</div>
+          <div class="step-desc">Produza conteudo em lote, finalize seu produto e configure a pagina de vendas.</div>
+        </div>
+      </div>
+      <div class="plan-step">
+        <div class="step-dot">S3</div>
+        <div class="step-content">
+          <div class="step-week">Semana 3 - Dias 15 a 21</div>
+          <div class="step-title">Vendas</div>
+          <div class="step-desc">Lance seu produto, intensifique o conteudo e faca suas primeiras vendas reais.</div>
+        </div>
+      </div>
+      <div class="plan-step">
+        <div class="step-dot">S4</div>
+        <div class="step-content">
+          <div class="step-week">Semana 4 - Dias 22 a 30</div>
+          <div class="step-title">Otimizacao</div>
+          <div class="step-desc">Analise os dados, automatize processos e escale o que funcionou.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <!-- EDITAR: substitua SEU_LINK_KIWIFY e altere 27,90 se mudar o preco -->
+  <section class="final-cta fade-in" id="comprar">
+    <div class="section-label">Acesso imediato</div>
+    <h2 class="final-cta-title">Comece agora. Sua primeira venda pode ser hoje.</h2>
+    <p class="final-cta-desc">550 prompts prontos + bonus exclusivos + plano de 30 dias. Tudo em um unico produto.</p>
+
+    <div class="final-price-label">Investimento unico</div>
+    <div class="final-price"><sup>R$</sup>27<span style="font-size:55%;opacity:0.85">,90</span></div>
+
+    <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-hero" style="font-size:1rem;padding:18px 40px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Comprar agora - R$ 27,90
+    </a>
+
+    <p class="final-subtext">Pagamento seguro - Acesso imediato - Produto digital</p>
+  </section>
+
+  <footer>2026 - Produto Digital Premium - Todos os direitos reservados</footer>
+
+</div>
+
+<!-- BARRA FIXA - EDITAR: substitua SEU_LINK_KIWIFY e altere 27,90 se mudar o preco -->
+<div class="buy-bar">
+  <div class="buy-bar-text">
+    <strong>550 Prompts de IA</strong>
+    R$ 27,90 - Acesso imediato
+  </div>
+  <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener" class="btn-buy">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    Comprar
+  </a>
+</div>
+
+<script>
+/* PARTICULAS NO FUNDO */
+(function(){
+  var canvas = document.getElementById('bg-canvas');
+  var ctx = canvas.getContext('2d');
+  var W, H, particles = [];
+
+  function resize(){
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  var CHARS = ['0','1','{','}','<','>','/','#','$','@'];
+  var GREEN = '#00FF88';
+
+  function init(){
+    particles = [];
+    var count = Math.min(60, Math.floor(W * H / 14000));
+    for(var i=0; i<count; i++){
+      particles.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        char: CHARS[Math.floor(Math.random()*CHARS.length)],
+        size: 9 + Math.random()*7,
+        speed: 0.15 + Math.random()*0.3,
+        alpha: 0.08 + Math.random()*0.18,
+        drift: (Math.random()-0.5)*0.3
+      });
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0; i<particles.length; i++){
+      var p = particles[i];
+      ctx.font = p.size + "px 'Space Mono', monospace";
+      ctx.fillStyle = GREEN;
+      ctx.globalAlpha = p.alpha;
+      ctx.fillText(p.char, p.x, p.y);
+      p.y -= p.speed;
+      p.x += p.drift;
+      if(p.y < -20){ p.y = H+20; p.x = Math.random()*W; p.char = CHARS[Math.floor(Math.random()*CHARS.length)]; }
+      if(p.x < -20 || p.x > W+20){ p.x = Math.random()*W; }
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  init();
+  draw();
+  window.addEventListener('resize', function(){ resize(); init(); });
+})();
+
+/* CONTADOR ANIMADO */
+(function(){
+  var el = document.getElementById('counter');
+  var target = 550;
+  var start = null;
+  var duration = 1800;
+
+  function ease(t){ return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+  function step(ts){
+    if(!start) start = ts;
+    var prog = Math.min((ts-start)/duration, 1);
+    el.textContent = Math.round(ease(prog)*target);
+    if(prog < 1){ requestAnimationFrame(step); }
+    else { el.textContent = target; }
+  }
+  setTimeout(function(){ requestAnimationFrame(step); }, 300);
+})();
+
+/* FADE IN AO ROLAR */
+(function(){
+  var els = document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('visible'); });
+  }
 })();
 </script>
 </body>
